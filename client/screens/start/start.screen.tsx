@@ -20,7 +20,7 @@ export default function StartScreen() {
   }
 
   const askQuestiononButtonPress = () => {
-    alert("test")
+    router.push("/(routes)/ask_question")
   }
 
   const loginButtonPress = () => {

@@ -80,7 +80,7 @@ export default function LoginScreen() {
         </Text>
 
         <View className="">
-          <RoundedButton label="Sign In" onPress={() => router.push('/(routes)/manage_users')} />
+          <RoundedButton label="Sign In" onPress={() => router.push('/(routes)/ask_question')} />
         </View>
 
         <View className="flex flex-row items-center pl-7">
