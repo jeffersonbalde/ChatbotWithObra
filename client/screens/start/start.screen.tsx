@@ -20,7 +20,7 @@ export default function StartScreen() {
   }
 
   const askQuestiononButtonPress = () => {
-    router.push("/(routes)/ask_question")
+    router.push("/(routes)/chat")
   }
 
   const loginButtonPress = () => {
@@ -40,11 +40,11 @@ export default function StartScreen() {
             source={require("@/assets/images/obra_logo.png")}
             className="scale-100"
           />
-          <Text className="text-4xl ml-2 text-[#13AD87] font-bold">Query Bot</Text>
+          <Text className="text-4xl ml-2 text-[#13AD87] font-bold">Chat With Obra</Text>
         </View>
     
         {/* button container */}
-        <View className="">
+        <View className="items-center">
           <Button label="Ask Question" onPress={askQuestiononButtonPress}/>
           <Button label="Login" onPress={loginButtonPress}/>
         </View>

@@ -33,7 +33,7 @@ export default function LoginScreen() {
           className="scale-50"
         />
         <Text style={{ fontFamily: "Inter_500Medium" }} className="text-2xl">
-          Query Bot
+          Chat With Obra
         </Text>
       </View>
 
@@ -80,7 +80,7 @@ export default function LoginScreen() {
         </Text>
 
         <View className="">
-          <RoundedButton label="Sign In" onPress={() => router.push('/(routes)/ask_question')} />
+          <RoundedButton label="Sign In" onPress={() => router.push('/(routes)/chat')} />
         </View>
 
         <View className="flex flex-row items-center pl-7">
