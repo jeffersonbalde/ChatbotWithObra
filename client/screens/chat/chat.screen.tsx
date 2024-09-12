@@ -15,6 +15,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import SafeViewAndroid from "@/components/SafeViewAndroid";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
+
 // Define types for the chat messages
 type ChatMessage = {
   role: "user" | "model";
@@ -134,11 +135,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#f8f8f8",
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: "bold",
     color: "#333",
     marginBottom: 20,
-    marginTop: 40,
+    marginTop: 30,
     textAlign: "center",
   },
   chatContainer: {
@@ -154,12 +155,15 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 50,
     marginRight: 10,
-    padding: 8,
+    paddingLeft: 20,
+    padding: 10,
     borderColor: "#333",
     borderWidth: 1,
     borderRadius: 25,
     color: "#333",
     backgroundColor: "#fff",
+    textAlign: 'left', 
+
   },
   button: {
     padding: 10,
