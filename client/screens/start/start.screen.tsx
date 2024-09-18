@@ -27,6 +27,10 @@ export default function StartScreen() {
     router.push("/(routes)/login")
   }
 
+  const manageUserScreen = () => {
+    router.push("/(routes)/manage_users")
+  }
+
   return (
     <SafeAreaView
       style={SafeViewAndroid.AndroidSafeArea}
@@ -47,6 +51,7 @@ export default function StartScreen() {
         <View className="items-center">
           <Button label="Ask Question" onPress={askQuestiononButtonPress}/>
           <Button label="Login" onPress={loginButtonPress}/>
+          <Button label="Manage Users" onPress={manageUserScreen}/>
         </View>
       </View>
     </SafeAreaView>

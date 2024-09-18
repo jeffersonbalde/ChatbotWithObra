@@ -2,17 +2,14 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
-import "react-native-reanimated";
-import { Text, View } from "react-native";
-import StartApp from "./(routes)/start_app";
-import { Stack } from "expo-router";
+import { onAuthStateChanged, User } from "firebase/auth";
+import { FIREBASE_AUTH } from "@/FirebaseConfig";
+import { Stack, useRouter } from "expo-router";
 
 export {
-  // Catch any errors thrown by the Layout component.
-  ErrorBoundary,
+  ErrorBoundary, 
 } from "expo-router";
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -21,7 +18,6 @@ export default function RootLayout() {
     ...FontAwesome.font,
   });
 
-  // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
     if (error) throw error;
   }, [error]);
@@ -40,19 +36,26 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const [isLoggedIn, setisLoggedIn] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(FIREBASE_AUTH, (currentUser: User | null) => {
+      setUser(currentUser);
+
+      if (currentUser) {
+        router.replace("/chat"); 
+      } else {
+        router.replace("/login"); 
+      }
+    });
+
+    return () => unsubscribe();
+  }, [router]);
+
   return (
-    <>
-      {isLoggedIn ? (
-        <View>
-          <Text>Logged In</Text>
-        </View>
-      ) : (
-        <Stack screenOptions={{headerShown: false}}>
-          <Stack.Screen name="index" />
-          <Stack.Screen name="(routes)/login/index" />
-        </Stack>
-      )}
-    </>
+    <Stack screenOptions={{ headerShown: false }}>
+
+    </Stack>
   );
 }
