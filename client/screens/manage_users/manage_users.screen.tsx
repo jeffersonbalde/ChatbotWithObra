@@ -45,7 +45,7 @@ const ManageUserScreen = () => {
   }
 
   return (
-    <SafeAreaView style={[SafeViewAndroid.AndroidSafeArea]} className="">
+    <SafeAreaView style={[SafeViewAndroid.AndroidSafeArea]} className="h-screen">
       <View className="flex flex-row items-center">
         <Image
           source={require("@/assets/images/chatbot_logo.png")}
@@ -63,7 +63,7 @@ const ManageUserScreen = () => {
         <Text className="text-2xl font-medium">Users</Text>
         <TextInput
           className="h-12 border-black w-80 rounded-full pl-14 "
-          style={{ borderColor: "#8E8E8E", borderWidth: 0.5 }}
+          style={{ borderColor: "#8E8E8E", borderWidth: 0.5, marginBottom: 20 }}
           placeholder="jefferson.balde@sccpag.edu.ph"
           keyboardType="email-address"
           // value={userInput}
@@ -75,7 +75,7 @@ const ManageUserScreen = () => {
         data={users}
         keyExtractor={(item) => item.uid}
         renderItem={({ item }) => (
-          <View className="flex flex-col items-center bg-[#F7F7F7] mb-3 p-7">
+          <View className="flex flex-col items-center bg-[#F7F7F7] mb-3 p-7 mt-5">
             {/* <Text style={styles.userText}>Name: {item.display_name || 'N/A'}</Text> */}
             <Text style={styles.userText}>Email: {item.email}</Text>
             <View className="flex flex-row items-center p-2">
