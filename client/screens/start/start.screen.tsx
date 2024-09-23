@@ -44,7 +44,7 @@ export default function StartScreen() {
             source={require("@/assets/images/obra_logo.png")}
             className="scale-100"
           />
-          <Text className="text-4xl ml-2 text-[#13AD87] font-bold">Chat With Obra</Text>
+          <Text className="text-4xl ml-2 text-[#EF4E3F] font-bold">Chat With Obra</Text>
         </View>
     
         {/* button container */}

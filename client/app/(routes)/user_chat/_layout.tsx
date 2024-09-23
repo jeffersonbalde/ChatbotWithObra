@@ -5,7 +5,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { router } from "expo-router";
 
-const mode: "admin" | "user" = "admin";
+// const mode: "admin" | "user" = "admin";
 
 function CustomDrawerContent(props: any) {
   return (
@@ -39,23 +39,6 @@ export default function Layout() {
             title: "",
           }}
         />
-        <Drawer.Screen
-          name="database/index"
-          options={{
-            drawerLabel: "Database",
-            title: "Database",
-            drawerItemStyle: {
-              display: mode === "admin" ? undefined : "none",
-            },
-          }}
-        />
-        <Drawer.Screen
-          name="manage_users/index"
-          options={{
-            drawerLabel: "Manage Users",
-            title: "",
-          }}
-        />
       </Drawer>
     </GestureHandlerRootView>
   );
@@ -63,7 +46,7 @@ export default function Layout() {
 
 const styles = StyleSheet.create({
   logoutContainer: {
-    marginTop: 500,
+    marginTop: 620,
     // borderTopWidth: 1,
     // borderTopColor: '#ccc',
     // paddingTop: 10,

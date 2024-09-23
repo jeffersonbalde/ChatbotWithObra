@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#333",
     marginBottom: 20,
-    marginTop: 30,
+    // marginTop: 30,
     textAlign: "center",
   },
   chatContainer: {
