@@ -123,15 +123,19 @@ export default function RegisterScren() {
     >
       <ScrollView overScrollMode="never" showsVerticalScrollIndicator={false}>
         {/* logo container */}
-        <View className="flex flex-row items-center">
-          <Image
-            source={require("@/assets/images/chatbot_logo.png")}
-            className="scale-50"
-          />
-          <Text style={{ fontFamily: "Inter_500Medium" }} className="text-2xl">
-            Chat With Obra
-          </Text>
-        </View>
+            {/* logo container */}
+            <View className="flex flex-row items-center">
+              <Image
+                source={require("@/assets/images/logo.jpg")}
+                className="scale-50 w-36 h-36"
+              />
+              <Text
+                style={{ fontFamily: "Inter_500Medium" }}
+                className="text-2xl"
+              >
+                Chat With Obra
+              </Text>
+            </View>
 
         {/* form container */}
         <View className="flex flex-col gap-5">
@@ -148,7 +152,7 @@ export default function RegisterScren() {
             <TextInput
               className="h-12 border-black w-80 rounded-full pl-14"
               style={{ borderColor: "#8E8E8E", borderWidth: 0.5 }}
-              placeholder="Jefferson"
+              // placeholder="Jefferson"
               value={userInfo.firstName}
               onChangeText={(value) =>
                 setUserInfo({ ...userInfo, firstName: value })
@@ -168,7 +172,7 @@ export default function RegisterScren() {
             <TextInput
               className="h-12 border-black w-80 rounded-full pl-14"
               style={{ borderColor: "#8E8E8E", borderWidth: 0.5 }}
-              placeholder="Balde"
+              // placeholder="Balde"
               value={userInfo.lastName}
               onChangeText={(value) =>
                 setUserInfo({ ...userInfo, lastName: value })
@@ -188,7 +192,7 @@ export default function RegisterScren() {
             <TextInput
               className="h-12 border-black w-80 rounded-full pl-14"
               style={{ borderColor: "#8E8E8E", borderWidth: 0.5 }}
-              placeholder="jefferson.balde@sccpag.edu.ph"
+              // placeholder="jefferson.balde@sccpag.edu.ph"
               keyboardType="email-address"
               value={userInfo.email}
               onChangeText={(value) =>
@@ -210,7 +214,7 @@ export default function RegisterScren() {
             <TextInput
               className="h-12 border-black w-80 rounded-full pl-14"
               style={{ borderColor: "#8E8E8E", borderWidth: 0.5 }}
-              placeholder="*********"
+              // placeholder="*********"
               secureTextEntry={!isPasswordVisible}
               onChangeText={handlePasswordValidation}
             />
@@ -247,7 +251,7 @@ export default function RegisterScren() {
             <TextInput
               className="h-12 border-black w-80 rounded-full pl-14"
               style={{ borderColor: "#8E8E8E", borderWidth: 0.5 }}
-              placeholder="*********"
+              // placeholder="*********"
               secureTextEntry={!isPasswordVisible}
               onChangeText={handleConfirmPasswordValidation}
             />
